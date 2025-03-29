@@ -213,24 +213,24 @@ def main():
     a
     """
     p = LinkedList()
-    pinput = input().split()
-    for i in range(0, len(pinput), 2):
-        coeff = int(pinput[i])
-        exp = int(pinput[i+1])
-        p.insert_term(coeff, exp)
+    n = int(input())
+    pinput = [input().split() for i in range(n)]
+    for coeff, exp in pinput:
+        p.insert_term(int(coeff), int(exp))
+
+    input()
 
     q = LinkedList()
-    qinput = input().split()
-    for i in range(0, len(qinput), 2):
-        coeff = int(qinput[i])
-        exp = int(qinput[i+1])
-        q.insert_term(coeff, exp)
+    m = int(input()) 
+    qinput = [input().split() for i in range(m)]
+    for coeff, exp in qinput:
+        q.insert_term(int(coeff), int(exp))
 
     sum_result = p.add(q)
-    print("Sum:", sum_result)
+    print(sum_result)
 
     product_result = p.mult(q)
-    print("Product:", product_result)
+    print(product_result)
 
 
 if __name__ == "__main__":
