@@ -185,7 +185,7 @@ class LinkedList:
         result = LinkedList()
         a = self.head
         while a:
-            b = p.head  # ← Don't overwrite p!
+            b = p.head
             while b:
                 x = a.coeff * b.coeff
                 y = a.exp + b.exp
