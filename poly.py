@@ -13,7 +13,7 @@ code to someone else), the case shall be submitted to the Office of the Dean of
 Students. Academic penalties up to and including an F in the course are likely.
 
 UT EID 1: ac84787
-UT EID 2:
+UT EID 2: vsb433
 """
 
 
@@ -182,17 +182,17 @@ class LinkedList:
         """
         a
         """
-        h = self.head
-        multiplied = LinkedList()
-        while h:
-            p = p.head
-            while p:
-                coeff = h.coeff * p.coeff
-                exp = h.exp + p.exp
-                multiplied.insert_term(coeff, exp)
-                p = p.next
-            h = h.next
-        return multiplied
+        result = LinkedList()
+        a = self.head
+        while a:
+            b = p.head  # ← Don't overwrite p!
+            while b:
+                x = a.coeff * b.coeff
+                y = a.exp + b.exp
+                result.insert_term(x, y)
+                b = b.next
+            a = a.next
+        return result
 
     # Return a string representation of the polynomial.
     def __str__(self):
