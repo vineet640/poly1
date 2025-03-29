@@ -127,7 +127,7 @@ class LinkedList:
         if self.head is None:
             self.head = a
             return
-        elif self.head.exp < exp:
+        if self.head.exp < exp:
             a.next = self.head
             self.head = a
             return
@@ -221,7 +221,7 @@ def main():
     input()
 
     q = LinkedList()
-    m = int(input()) 
+    m = int(input())
     qinput = [input().split() for i in range(m)]
     for coeff, exp in qinput:
         q.insert_term(int(coeff), int(exp))
